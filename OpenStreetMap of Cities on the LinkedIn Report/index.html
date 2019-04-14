@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<h1>LinkedIn Report: Cities on the US Map</h1>
+    <title>Simple Leaflet Map</title>
+    <meta charset="utf-8" />
+    <link 
+        rel="stylesheet" 
+        href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"
+    />
+    <style>
+    body {
+		padding: 0;
+		margin: 0;
+	}
+	html, body, #map {
+		height: 100%;
+		width: 100%;
+	}
+    
+    </style>
+</head>
+<body>
+
+    <div id="map"></div>
+
+    <script
+        src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+    </script>
+
+    <script>
+
+	var planes = [
+		
+		["Massachusetts",42.271831,-71.363628],
+		["Texas",30.943149,-97.388631],
+		["Georgia",33.332208,-83.868887],
+		["Washington DC", 38.8903694,-77.0319595],
+		["Washington",47.341728,-121.624501],
+		["New Jersey",40.438458,-74.428055],
+		["Colorado",39.500656,-105.203628],
+		["Illinois",41.278216,-88.380238],
+		["Atlanta",33.1136,-94.1672],
+		["Austin",30.3006,-97.7517],
+		["Round Rock",30.5252,-97.6659],
+		["Cedar Park",30.5105,-97.8198 ],
+		["Boulder",42.7461,-109.7067],
+		["Boston",37.6039,-75.8437],
+		["Chicago",41.8373,-87.6861],
+		["Washington", 38.7122,-78.1599],
+		["Los Angeles", 28.4658,-99],
+		["Cambridge", 43.0071,-89.0214],
+		["Mountain View", 19.5358,-155.1596],
+		["Manhattan", 40.7834,-73.9662],
+		["New York", 32.1679,-95.6691],
+		["Jersey City",40.7161,-74.0682],
+		["Newark",39.6776,-75.7573],
+		["Oakland",28.5537,-81.6339],
+		["Bronx",42.9927,-110.116],
+		["Hoboken",40.7453,-74.0279],
+		["Brooklyn",46.7762,-123.5099],
+		["Rutherford", 40.8203,-74.1057],
+		["Union",47.3475,-123.0952],
+		["Rahway",40.6077,-74.2807],
+		["Murray Hill",38.2907,-85.5871],
+		["South Plainfield",40.5748,-74.4153],
+		["Queens",40.7498,-73.7976],
+		["Little Falls",43.0452,-74.8566],
+		["Florham Park",40.7772,-74.3953],
+		["Troy Hills",40.8529,-74.3921],
+		["Bloomfield",36.7398,-107.9733],
+		["Lynbrook",40.6579,-73.6742],
+		["Allendale",42.8147,-106.3106],
+		["Parsippany",40.8579,-74.426],
+		["West Orange",30.0791,-93.7599],
+		["Kenilworth",40.6781,-74.289],
+		["Ridgefield",45.8116,-122.7052],
+		["Harrison",44.1923,-88.2913],
+		["Montclair",38.6111,-77.34],
+		["Fort Lee",40.8509,-73.9712],
+		["Carlstadt",40.8247,-74.0613],
+		["Orangeburg",41.0487,-73.9407],
+		["Fairfield",47.3848,-117.1748],
+		["Palisades",47.419,-119.9145],
+		["Hackensack",40.889,-74.0461],
+		["Roseland",27.8361,-80.4884],
+		["East Hanover",40.8201,-74.3649],
+		["Long Beach",46.3559,-124.0557],
+		["Whippany",40.8245,-74.4171],
+		["Manhasset",40.7884,-73.6943],
+		["Yonkers",40.9466,-73.8674],
+		["New Hyde Park",40.7324,-73.6857],
+		["Secaucus",40.781,-74.0659],
+		["Port Washington",43.3847,-87.8852],
+		["Staten Island",40.5834,-74.1496],
+		["Short Hills",40.7389,-74.3278],
+		["Woodcliff Lake",41.0253,-74.0604],
+		["Redmond",47.6762,-122.1166],
+		["San Diego",27.7609,-98.2389],
+		["Bedminster",40.6807,-74.6454],
+		["New Brunswick",40.487,-74.445],
+		["Seattle",47.6211,-122.3244],
+		["San Francisco",37.7562,-122.443],
+		["Redwood City",37.5026,-122.2252],
+		["San Mateo",35.3317,-107.6469],
+		["Berkeley",28.5028,-82.5887],
+		["Menlo Park",37.4686,-122.1671],
+		["Emeryville",37.8382,-122.2932],
+		["Oakland",28.5537,-81.6339],
+		["South San Francisco",37.6536,-122.4197],
+		["Foster City",37.5553,-122.2659],
+		["San Carlos",26.2957,-98.063],
+		["Union City",40.7674,-74.0323],
+		["Burlingame",37.586,-122.3669],
+		["Belmont",47.0879,-117.1624],
+		["Richmond",37.5295,-77.4756],
+		["Hayward",46.0094,-91.4826],
+		["Novato",38.092,-122.5576],
+		["Alameda",35.1867,-106.6181],
+		["San Rafael",35.0878,-107.8895],
+		["Pleasant Hill",47.6154,-121.9096],
+		["San Bruno",37.6254,-122.4313],
+		["San Ramon",37.7625,-121.9365],
+		["Lafayette",37.233,-80.2051],
+		["San Leandro",37.7071,-122.1601],
+		["Daly City",37.6863,-122.4684],
+		["Mill Valley",37.9085,-122.542],
+		["Fremont",44.2602,-88.8715],
+		["Martinez",37.9985,-122.116],
+		["Walnut Creek",35.305,-77.8714],
+		["Kentfield",37.9481,-122.5497],
+		["Sunnyvale",32.7974,-96.5577]
+	];
+
+        var map = L.map('map').setView([40.138460,-99.827010], 3);
+        mapLink = 
+            '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        L.tileLayer(
+            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; ' + mapLink + ' Contributors',
+            maxZoom: 18,
+            }).addTo(map);
+
+		for (var i = 0; i < planes.length; i++) {
+			marker = new L.marker([planes[i][1],planes[i][2]])
+				.bindPopup(planes[i][0])
+				.addTo(map);
+		}
+               
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{"type":"FeatureCollection","features":[
+{"type":"Feature","id":"13","geometry":{"type":"Point","coordinates":[-83.868887,33.332208]},"properties":{"name":"Georgia","population":123}},
+{"type":"Feature","id":"06","geometry":{"type":"Point","coordinates":[-119.355165,35.458606]},"properties":{"name":"California","population":575}},
+{"type":"Feature","id":"08","geometry":{"type":"Point","coordinates":[-105.203628,39.500656]},"properties":{"name":"Colorado","population":19}},
+{"type":"Feature","id":"36","geometry":{"type":"Point","coordinates":[-74.645228,41.507548]},"properties":{"name":"New York","population":351}},
+{"type":"Feature","id":"48","geometry":{"type":"Point","coordinates":[-97.388631,30.943149]},"properties":{"name":"Texas","population":62}},
+{"type":"Feature","id":"25","geometry":{"type":"Point","coordinates":[-71.363628,42.271831]},"properties":{"name":"Massachusetts","population":383}},
+{"type":"Feature","id":"09","geometry":{"type":"Point","coordinates":[-72.874365,41.494852]},"properties":{"name":"Connecticut","population":1}},
+{"type":"Feature","id":"17","geometry":{"type":"Point","coordinates":[-88.380238,41.278216]},"properties":{"name":"Illinois","population":180}},
+{"type":"Feature","id":"34","geometry":{"type":"Point","coordinates":[-74.428055,40.438458]},"properties":{"name":"New Jersey","population":14}},
+{"type":"Feature","id":"53","geometry":{"type":"Point","coordinates":[-121.624501,47.341728]},"properties":{"name":"Washington","population":334}},
+{"type":"Feature","id":"11","geometry":{"type":"Point","coordinates":[-77.014001,38.910092]},"properties":{"name":"District of Columbia","population":111}}
+
+]}

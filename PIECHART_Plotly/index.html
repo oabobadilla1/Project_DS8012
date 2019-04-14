@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<h1>Targeteed Keyword Frequencies for Education:</h1>
+<head>
+  <!-- Plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- Numeric JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
+</head>
+
+<body>
+  
+  <div id="myDiv">  <!-- Plotly chart will be drawn inside this DIV --></div>
+  <script>
+    <!-- JAVASCRIPT CODE GOES HERE -->
+
+var data = [{
+  values: [6588,5776,2738, 1004, 746, 687],
+  labels: ['#1_Bach(S)','#2_Masters(MA)',  '#3_No Degree', '#4_MS', '#5_PHD', '#6_BS'],
+  type: 'pie'
+}];
+
+
+var layout = {
+  height: 600,
+  width: 600
+};
+var allLabels = ['1st', '2nd', '3rd', '4th', '5th'];
+
+Plotly.newPlot('myDiv', data,layout);
+
+
+  </script>
+</body>
+
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <!-- Plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- Numeric JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
+</head>
+
+<body>
+  
+  <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+  <script>
+    <!-- JAVASCRIPT CODE GOES HERE -->
+  </script>
+</body>
+</html>
+
+<div class="title-holder">
+  <h1 class="title">Kagle.com dataset: data-scientist-job-market-in-the-us</h1>
+  <p class="subtitle"></p>
+  <p class="font">Shout out to mike bostock : ) </p>
+</div>
+
+<div id="chart"></div>
+
+<footer>
+  <ul class="footer">
+    <li><a href="https://www.kaggle.com/sl6149/data-scientist-job-market-in-the-us
+" target="_blank">Data Source</a></li>
+    <li><a href="https://bl.ocks.org/mbostock" target="_blank">Mike Bostock's Blocks - bl.ocks.org</a></li>
+  </ul>
+</footer>
